@@ -1,0 +1,76 @@
+1. strlen(string length)
+char str[] = "Hello";
+
+printf("%zu\n", strlen(str)); // 5
+printf("%zu\n", sizeof(str)); // 6
+
+strlen(str): The number of characters before the '\0' (null terminator)
+sizeof(str): The total size of the array in bytes
+
+2. strcmp(string comparison)
+char a[] = "apple";
+char b[] = "banana";
+
+printf("%d\n", strcmp(a, b));
+0: The strings are identical
+negative: The first string comes first alphabetically
+positive: The first string comes later in alphabetical order.
+
+3. strcpy(string copy)
+char src[] = "Hello";
+char dest[10];
+
+strcpy(dest, src);
+
+printf("%s\n", dest); // Hello
+
+`strcpy(dest, src)` copies the string from `src` to `dest`, including the final `'\0'` character.
+
+fgets:
+fgets(array name, array size, stdin);
+
+Removing newline characters
+In actual programming, User often find themselve needing to remove the '\n' characters from input.
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char name[20];
+
+    printf("이름 입력: ");
+
+    if (fgets(name, sizeof(name), stdin) == NULL) {
+        return 1;
+    }
+
+    name[strcspn(name, "\n")] = '\0';
+    /*This code finds the position of the first '\n' character in a string and replaces it with a '\0'. If there is no newline character, 
+    it simply sets the existing null-terminator position to a null character again, ensuring it works safely even with strings that are already properly null-terminated.*/
+
+    printf("문자열: %s\n", name);
+    printf("길이: %zu\n", strlen(name));
+
+    return 0;
+}
+
+Code compare name1 and name2 - if name1 and name2 are same, then code print "Same name"
+
+#include <stdio.h>
+#include <stddef.h>
+#include <string.h>
+
+int main(void){
+    char name1[20];
+    char name2[20];
+
+    printf("name1: ");
+    fgets(name1, sizeof(name1), stdin);
+    printf("name2: ");
+    fgets(name2, sizeof(name2), stdin);
+
+    if(strcmp(name1, name2) == 0){
+        printf("Same name\n");
+    }
+    return 0;
+}
