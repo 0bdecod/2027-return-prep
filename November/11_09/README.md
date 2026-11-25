@@ -48,6 +48,6 @@ void swap(int *a, int *b) {
 
 ## 실습 확인
 
-[실행 예제](../examples/c/basics.c)는 값 전달 전후, 포인터를 통한 변경,
+[실행 예제](value_and_swap.c)는 값 전달 전후, 포인터를 통한 변경,
 서로 다른 두 변수의 교환과 자기 자신과의 교환을 검증한다.
-실행 방법은 [README](../README.md#c-실습-실행)를 참고한다.
+실행 방법은 [README](../../README.md#c-실습-실행)를 참고한다.

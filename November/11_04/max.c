@@ -32,26 +32,6 @@ static int max_ternary(int a, int b, int c)
     return (max > c) ? max : c;
 }
 
-static void change_value(int x)
-{
-    x = 100;
-    (void)x;
-}
-
-/* x must point to a live, writable int. */
-static void change_pointer(int *x)
-{
-    *x = 100;
-}
-
-/* Both arguments must point to live, writable ints. Aliasing is allowed. */
-static void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 int main(void)
 {
     const int cases[][4] = {
@@ -69,27 +49,6 @@ int main(void)
         assert(max_ternary(a, b, c) == expected);
     }
 
-    int value = 10;
-    int *pointer = &value;
-    printf("value address: %p\n", (void *)pointer);
-    assert(*pointer == 10);
-    change_value(value);
-    assert(value == 10);
-    change_pointer(pointer);
-    assert(value == 100);
-
-    int other = -5;
-    swap(&value, &other);
-    assert(value == -5 && other == 100);
-    swap(&value, &value);
-    assert(value == -5);
-
-    int array[5] = {1, 2, 3, 4, 5};
-    int sum = 0;
-    for (size_t i = 0; i < sizeof array / sizeof array[0]; ++i) {
-        sum += array[i];
-    }
-    assert(sum == 15);
     puts("All checks passed.");
     return 0;
 }

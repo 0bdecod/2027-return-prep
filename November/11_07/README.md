@@ -35,6 +35,6 @@ int array[5] = {1, 2, 3, 4, 5};
 
 ## 실습 확인
 
-[실행 예제](../examples/c/basics.c)는 주소를 출력하고,
+[실행 예제](pointers_and_arrays.c)는 주소를 출력하고,
 유효한 인덱스만 순회하여 합이 15인지 검증한다.
-실행 방법은 [README](../README.md#c-실습-실행)를 참고한다.
+실행 방법은 [README](../../README.md#c-실습-실행)를 참고한다.
