@@ -18,7 +18,7 @@ int main(void){
 
     int LastThreeSum = sum_array(arr + 2, 3);
 
-    printf("Total sum: %d\n", TotalSum);
+    printf("Total Sum: %d\n", TotalSum);
     printf("Last Three Sum: %d\n", LastThreeSum);
 
     printf("arr     : %p\n", (void *)arr);
@@ -27,6 +27,11 @@ int main(void){
 
     printf("sizeof(int): %zu\n", sizeof(int));
 
+    printf("First Two Sum: %d\n", sum_array(arr, 2));
+    printf("Two-Four Sum: %d\n", sum_array(arr + 1, 3));
+    printf("Last One Sum: %d\n", sum_array(arr + 4, 1));
+    printf("Total Sum: %d\n", sum_array(arr, 5));
+    printf("Sum of 0 length: %d\n", sum_array(arr, 0));
+
     return 0;
 }
-
