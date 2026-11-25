@@ -11,6 +11,9 @@
 | [11/04](November/11_04.md) | 세 정수의 최댓값: 독립 조건문, 분기, 삼항 연산자 | [C 기초 실습](examples/c/basics.c) |
 | [11/07](November/11_07.md) | 11/06 변수·주소·포인터와 11/08 배열 실습을 함께 정리 | [C 기초 실습](examples/c/basics.c) |
 | [11/09](November/11_09.md) | 값 전달, 포인터를 통한 변경, swap | [C 기초 실습](examples/c/basics.c) |
+| [11/11](November/11_11.md) | 배열과 포인터, `sizeof`, 배열 길이 전달 | [배열과 포인터](examples/c/11_11_array_pointers.c) |
+| [11/13](November/11_13.md) | 문자열 함수와 표준 입력 | [문자열 함수](examples/c/11_13_string_functions.c), [이름 입력](examples/c/11_13_read_name.c), [이름 비교](examples/c/11_13_compare_names.c) |
+| [11/25](November/11_25/README.md) | 포인터, 부분 배열, 배열 범위 확인 | [부분 배열의 합](November/11_25/array.c) |
 
 ## C 실습 실행
 
@@ -25,7 +28,14 @@ gcc -std=c11 -Wall -Wextra -Wpedantic -Werror examples/c/basics.c -o basics
 
 정상 종료하면 `All checks passed.`가 출력된다. 변수 주소는 실행 환경에 따라 다를 수 있다.
 검증에 `assert`를 사용하므로 `-DNDEBUG` 옵션은 지정하지 않는다.
-배열 범위를 벗어나는 접근은 실행하지 않는다.
+날짜별 예제는 각각 별도로 컴파일한다. 아래 명령의 소스와 출력 파일 이름을 바꾸면 다른 예제도 실행할 수 있다.
+
+```sh
+gcc -std=c11 -Wall -Wextra -Wpedantic -Werror November/11_25/array.c -o array
+```
+
+- Linux/macOS에서는 `./array`를 실행한다.
+- Windows PowerShell에서는 `.\array.exe`를 실행한다.
 
 ## 학습 예정 분야
 
@@ -43,6 +53,7 @@ gcc -std=c11 -Wall -Wextra -Wpedantic -Werror examples/c/basics.c -o basics
 ## 기록 작성 방식
 
 월별 폴더에 `MM_DD.md`로 기록하고, 실행 가능한 코드는 `examples/`에 둔다.
+11/25처럼 별도 폴더로 시작한 기록은 해당 폴더의 `README.md`에서 같은 폴더의 코드를 링크한다.
 새 기록을 추가할 때 README의 표에도 링크를 추가한다.
 
 ```markdown

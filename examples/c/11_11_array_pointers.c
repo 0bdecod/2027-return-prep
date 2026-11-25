@@ -1,5 +1,3 @@
-The Relationship Between Pointers and Arrays:
-
 #include <stdio.h>
 #include <stddef.h>
 
@@ -28,18 +26,3 @@ int main(void) {
     printf("%d\n", *(p + 2));
     return 0;
 }
-
-*(p + i)
-i번째 원소의 주소로 이동해 값을 읽는다.
-
-배열 vs 포인터
-배열은 데이터 저장 공간, 포인터는 주소를 저장하는 변수다.
-
-sizeof
-배열은 전체 크기, 포인터는 주소 저장 변수의 크기를 반환한다.
-
-배열 길이 전달
-포인터만으로는 배열 원소 개수를 알 수 없다.
-
-arr + 2
-배열의 세 번째 원소를 가리킨다.
